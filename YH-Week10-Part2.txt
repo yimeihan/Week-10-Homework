@@ -1,0 +1,79 @@
+1.
+-document.createElement()
+Creates an HTML element on the page specified by tagName, or an HTMLUnknownElement if tagName is not recognized.
+-const element = document.createElement(nodeName);
+-Parameters:nodeName (type String): Required. The name of the element you want to create.
+-Return value: a new Element.
+-function createNode(element){
+    return document.createElement(element);
+
+2.
+-Element.setAttribute()
+This method sets the value of an attribute on the specified element. If the attribute already exists, the value is updated. Otherwise, a new attribute is added with the specified name and value.
+-Element.setAttribute(name, value);
+-Parameters:
+name: A DOMString specifying the name of the attribute whose value is to be set. The attribute name is automatically converted to all lower-case when setAttribute() is called on an HTML element residing in an HTML document.
+value: A DOMString containing the value to assign to the attribute. Any non-string value specified is automatically converted into a string.
+-Return value: undefined.
+
+3.
+-Node.appendChild()
+appendChild() is a method of the Node interface.
+What is the Node interface? It is an interface that is implemented by a large number of objects, including document, and element.
+-element.appendChild(aChild)
+-Parameters:aChild
+The node to append to the given parent node (commonly an element).
+-Return value:
+The returned value is the appended child (aChild), except when aChild is a DocumentFragment, in which case the empty DocumentFragment is returned.
+-function append(parent, el) {
+  parent.appendChild(el);
+}
+
+4.
+-document.createTextNode():
+creates a Text Node with the specified text. HTML elements often consist of both an element node and a text node. 
+-document.createTextNode(text);
+-Parameters:text (required): of type String. It is the text of the Text Node.
+-Return value: A Text Node object with the created Text Node.
+-const header = document.createElement("header");
+const headerTextNode = document.createTextNode("Come Fetch Your Monsters!");
+header.appendChild(headerTextNode);
+
+5.
+-var newDiv = document.createElement("div"); 
+  // create a new div element 
+-var newContent = document.createTextNode("Hello!");
+  // and give it some content 
+-newDiv.appendChild(newContent);
+  // add the text node to the newly created div
+
+6.
+.innerHTML
+createTextNode will escape any strings and show them as they are, while innerHTML could render html-like strings into a DOM. 
+
+7.
+You may want to display some text without the security risks that it might contain other markup that the browser would parse and interpret if you used .innerHTML. So, you create a Text Node and set the value of its text, and the browser won't interpret any HTML in it. 
+
+8.
+The appending order is not important, except none of appended elements shows up on the page, before the outmost parent element is appended.
+
+9.
+The return keyword is used to return from a method when its execution is complete. When a return statement is reached in a method, the program returns to the code that invoked it.
+
+10.
+<ul id="monster">
+   <li>...<li>
+   <li>...<li>
+   <li>...<li>
+   <li>...<li>
+   <li>...<li>
+   <li>...<li>
+   <li>...<li>
+   <li>...<li>
+   <li>...<li>
+   <li>...<li>
+</ul>
+
+11.
+Uncaught ReferenceError: monster is not defined
+    at <anonymous>:1:13
